@@ -3,11 +3,17 @@
     "name": "DUGC N",
     "slug": "dugc-n",
     "owner": "dhoreme",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
+    "icon": "./icon.png",
     "android": {
-      "package": "com.azimr.dugcn"
+      "package": "com.azimr.dugcn",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "foregroundImage": "./adaptive-icon.png",
+        "backgroundColor": "#0B1020"
+      }
     },
     "extra": {
       "eas": {
