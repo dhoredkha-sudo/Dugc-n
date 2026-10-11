@@ -6,12 +6,12 @@
     "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "icon": "./icon.png",
+    "icon": "./icon-1.png",
     "android": {
       "package": "com.azimr.dugcn",
       "versionCode": 2,
       "adaptiveIcon": {
-        "foregroundImage": "./adaptive-icon.png",
+        "foregroundImage": "./adaptive-icon-1.png",
         "backgroundColor": "#0B1020"
       }
     },
