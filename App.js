@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, ScrollView, Modal, Linking, Alert,
   ActivityIndicator, StyleSheet, Image, KeyboardAvoidingView, Platform,
-  StatusBar as RNStatusBar,
+  StatusBar as RNStatusBar, BackHandler,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -293,6 +293,15 @@ export default function App() {
     setMenuOpen(false); setScreen(screenKey); setCat(catKey || 'all');
     setTimeout(() => scrollRef.current && scrollRef.current.scrollTo({ y: 0, animated: false }), 30);
   };
+
+  useEffect(() => {
+    const sub = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (menuOpen) { setMenuOpen(false); return true; }
+      if (screen !== 'home' || cat !== 'all') { setQInput(''); goTo('home'); return true; }
+      return false;
+    });
+    return () => sub.remove();
+  }, [menuOpen, screen, cat]);
 
   const q = qInput.trim().toLowerCase();
   const shown = posts.filter((p) => {
