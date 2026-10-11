@@ -2,11 +2,17 @@
   "expo": {
     "name": "DUGC N",
     "slug": "dugc-n",
+    "owner": "dhoreme",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "android": {
       "package": "com.azimr.dugcn"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3bf1197c-0b67-4c96-91e1-877a97ae0215"
+      }
     }
   }
 }
